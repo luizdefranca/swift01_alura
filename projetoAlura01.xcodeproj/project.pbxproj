@@ -14,6 +14,8 @@
 		C2973C641D5CFA57003677C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2973C621D5CFA57003677C4 /* LaunchScreen.storyboard */; };
 		C2973C6F1D5CFA57003677C4 /* projetoAlura01Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2973C6E1D5CFA57003677C4 /* projetoAlura01Tests.swift */; };
 		C2973C7A1D5CFA57003677C4 /* projetoAlura01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2973C791D5CFA57003677C4 /* projetoAlura01UITests.swift */; };
+		C2B371A01D61340B00383E70 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3719F1D61340B00383E70 /* Item.swift */; };
+		C2B371A21D61342500383E70 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B371A11D61342500383E70 /* Meal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		C2973C561D5CFA56003677C4 /* projetoAlura01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projetoAlura01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2973C591D5CFA57003677C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C2973C5B1D5CFA57003677C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C2973C5B1D5CFA57003677C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		C2973C5E1D5CFA57003677C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C2973C601D5CFA57003677C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2973C631D5CFA57003677C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		C2973C751D5CFA57003677C4 /* projetoAlura01UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = projetoAlura01UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2973C791D5CFA57003677C4 /* projetoAlura01UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = projetoAlura01UITests.swift; sourceTree = "<group>"; };
 		C2973C7B1D5CFA57003677C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2B3719F1D61340B00383E70 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C2B371A11D61342500383E70 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +101,10 @@
 		C2973C581D5CFA56003677C4 /* projetoAlura01 */ = {
 			isa = PBXGroup;
 			children = (
+				C2B3719C1D61333500383E70 /* controller */,
+				C2B3719D1D61333500383E70 /* model */,
+				C2B3719E1D61333500383E70 /* view */,
 				C2973C591D5CFA57003677C4 /* AppDelegate.swift */,
-				C2973C5B1D5CFA57003677C4 /* ViewController.swift */,
-				C2973C5D1D5CFA57003677C4 /* Main.storyboard */,
 				C2973C601D5CFA57003677C4 /* Assets.xcassets */,
 				C2973C621D5CFA57003677C4 /* LaunchScreen.storyboard */,
 				C2973C651D5CFA57003677C4 /* Info.plist */,
@@ -123,6 +128,31 @@
 				C2973C7B1D5CFA57003677C4 /* Info.plist */,
 			);
 			path = projetoAlura01UITests;
+			sourceTree = "<group>";
+		};
+		C2B3719C1D61333500383E70 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				C2973C5B1D5CFA57003677C4 /* ViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		C2B3719D1D61333500383E70 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				C2B3719F1D61340B00383E70 /* Item.swift */,
+				C2B371A11D61342500383E70 /* Meal.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		C2B3719E1D61333500383E70 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				C2973C5D1D5CFA57003677C4 /* Main.storyboard */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +286,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B371A21D61342500383E70 /* Meal.swift in Sources */,
 				C2973C5C1D5CFA57003677C4 /* ViewController.swift in Sources */,
+				C2B371A01D61340B00383E70 /* Item.swift in Sources */,
 				C2973C5A1D5CFA57003677C4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +331,7 @@
 				C2973C5E1D5CFA57003677C4 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		C2973C621D5CFA57003677C4 /* LaunchScreen.storyboard */ = {
@@ -484,6 +517,7 @@
 				C2973C801D5CFA57003677C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2973C811D5CFA57003677C4 /* Build configuration list for PBXNativeTarget "projetoAlura01Tests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +526,7 @@
 				C2973C831D5CFA57003677C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C2973C841D5CFA57003677C4 /* Build configuration list for PBXNativeTarget "projetoAlura01UITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +535,7 @@
 				C2973C861D5CFA57003677C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

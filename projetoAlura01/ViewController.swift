@@ -19,9 +19,13 @@ class ViewController: UIViewController {
     
     @IBAction
     func add(){
+        if nameTxtField == nil || happinessTxtField == nil {
+            return
+        }
         let name = nameTxtField.text
-        let happiness = happinessTxtField.text
-        print("eaten: \(name)  \(happiness)")
+        let happiness = Int(happinessTxtField.text)
+        let meal = Meal(name: name!, happiness: happiness!)
+        print("eaten: \(meal.name)  \(meal.happiness)")
     }
 
 
