@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C24C8B541D63A1C100575DB6 /* MealTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24C8B521D63A1C100575DB6 /* MealTableTableViewController.swift */; };
+		C24C8B551D63A1C100575DB6 /* MealTableTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C24C8B531D63A1C100575DB6 /* MealTableTableViewController.xib */; };
 		C2973C5A1D5CFA57003677C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2973C591D5CFA57003677C4 /* AppDelegate.swift */; };
 		C2973C5C1D5CFA57003677C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2973C5B1D5CFA57003677C4 /* ViewController.swift */; };
 		C2973C5F1D5CFA57003677C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2973C5D1D5CFA57003677C4 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C24C8B521D63A1C100575DB6 /* MealTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableTableViewController.swift; sourceTree = "<group>"; };
+		C24C8B531D63A1C100575DB6 /* MealTableTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealTableTableViewController.xib; sourceTree = "<group>"; };
 		C2973C561D5CFA56003677C4 /* projetoAlura01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = projetoAlura01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2973C591D5CFA57003677C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2973C5B1D5CFA57003677C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				C2973C5B1D5CFA57003677C4 /* ViewController.swift */,
+				C24C8B521D63A1C100575DB6 /* MealTableTableViewController.swift */,
+				C24C8B531D63A1C100575DB6 /* MealTableTableViewController.xib */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 			files = (
 				C2973C641D5CFA57003677C4 /* LaunchScreen.storyboard in Resources */,
 				C2973C611D5CFA57003677C4 /* Assets.xcassets in Resources */,
+				C24C8B551D63A1C100575DB6 /* MealTableTableViewController.xib in Resources */,
 				C2973C5F1D5CFA57003677C4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2B371A21D61342500383E70 /* Meal.swift in Sources */,
+				C24C8B541D63A1C100575DB6 /* MealTableTableViewController.swift in Sources */,
 				C2973C5C1D5CFA57003677C4 /* ViewController.swift in Sources */,
 				C2B371A01D61340B00383E70 /* Item.swift in Sources */,
 				C2973C5A1D5CFA57003677C4 /* AppDelegate.swift in Sources */,

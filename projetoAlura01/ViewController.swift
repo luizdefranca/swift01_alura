@@ -11,10 +11,10 @@ import UIKit
 class ViewController: UIViewController {
     
    
-    @IBOutlet var nameTxtField: UITextField!
+    @IBOutlet var nameTxtField: UITextField?
     
-    @IBOutlet var happinessTxtField: UITextView!
-    
+    @IBOutlet var happinessTxtField: UITextView?
+    var delegate: MailTableTableViewController?
     
     
     @IBAction
@@ -22,11 +22,21 @@ class ViewController: UIViewController {
         if nameTxtField == nil || happinessTxtField == nil {
             return
         }
-        let name = nameTxtField.text
-        let happiness = Int(happinessTxtField.text)
+        let name = nameTxtField!.text
+        let happiness = Int(happinessTxtField!.text)
         let meal = Meal(name: name!, happiness: happiness!)
         print("eaten: \(meal.name)  \(meal.happiness)")
+        if delegate == nil {
+            return
+        }
+        
+        delegate?.add(meal)
+        if let navigation = self.navigationController {
+            navigation.popViewControllerAnimated(true)
+
+        }
     }
+
 
 
 }
