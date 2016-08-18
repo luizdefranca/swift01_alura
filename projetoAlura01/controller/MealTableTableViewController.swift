@@ -8,7 +8,8 @@
 
 import UIKit
 
-class MailTableTableViewController: UITableViewController {
+class MailTableTableViewController: UITableViewController, AddMealDelegate
+{
         
     
     var meals = [Meal(name: "eggplant brownie", happiness: 5),
