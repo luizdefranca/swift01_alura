@@ -18,6 +18,8 @@
 		C2973C7A1D5CFA57003677C4 /* projetoAlura01UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2973C791D5CFA57003677C4 /* projetoAlura01UITests.swift */; };
 		C2B371A01D61340B00383E70 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3719F1D61340B00383E70 /* Item.swift */; };
 		C2B371A21D61342500383E70 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B371A11D61342500383E70 /* Meal.swift */; };
+		C2BB88981D6D069A00C9F4A7 /* NewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2BB88961D6D069A00C9F4A7 /* NewItemViewController.xib */; };
+		C5B9777811748F554FE2FC06 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B97C9F8335FF13A8765D72 /* NewItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		C2973C7B1D5CFA57003677C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2B3719F1D61340B00383E70 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C2B371A11D61342500383E70 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		C2BB88961D6D069A00C9F4A7 /* NewItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewItemViewController.xib; sourceTree = "<group>"; };
+		C5B97C9F8335FF13A8765D72 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 				C2973C5B1D5CFA57003677C4 /* ViewController.swift */,
 				C24C8B521D63A1C100575DB6 /* MealTableTableViewController.swift */,
 				C24C8B531D63A1C100575DB6 /* MealTableTableViewController.xib */,
+				C5B97C9F8335FF13A8765D72 /* NewItemViewController.swift */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				C2973C5D1D5CFA57003677C4 /* Main.storyboard */,
+				C2BB88961D6D069A00C9F4A7 /* NewItemViewController.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -269,6 +275,7 @@
 				C2973C611D5CFA57003677C4 /* Assets.xcassets in Resources */,
 				C24C8B551D63A1C100575DB6 /* MealTableTableViewController.xib in Resources */,
 				C2973C5F1D5CFA57003677C4 /* Main.storyboard in Resources */,
+				C2BB88981D6D069A00C9F4A7 /* NewItemViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,6 +305,7 @@
 				C2973C5C1D5CFA57003677C4 /* ViewController.swift in Sources */,
 				C2B371A01D61340B00383E70 /* Item.swift in Sources */,
 				C2973C5A1D5CFA57003677C4 /* AppDelegate.swift in Sources */,
+				C5B9777811748F554FE2FC06 /* NewItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

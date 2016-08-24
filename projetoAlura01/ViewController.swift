@@ -11,33 +11,78 @@ import UIKit
 protocol AddMealDelegate {
     func add(meal: Meal)
 }
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-   
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AddAnItemDelegate {
+
+
     @IBOutlet var nameTxtField: UITextField?
-    
+
     @IBOutlet var happinessTxtField: UITextView?
 //    var delegate: MailTableTableViewControlle
+
+    @IBOutlet var tableView: UITableView?
+    @IBAction
+    func add(){
+        if nameTxtField == nil || happinessTxtField == nil {
+            return
+        }
+        let name = nameTxtField!.text
+        let happiness = Int(happinessTxtField!.text)
+        let meal = Meal(name: name!, happiness: happiness!)
+//        meal.items = selected
+        print("eaten: \(meal.name) | \(meal.happiness) | \(meal.items.description)")
+        if delegate == nil {
+            return
+        }
+
+        delegate!.add(meal)
+        if let navigation = self.navigationController {
+            navigation.popViewControllerAnimated(true)
+
+        }
+    }
+
     var delegate: AddMealDelegate?
     var items = [
-            Item(name: "Eggplant Brownie", calories: 10),
-            Item(name: "Zucchini Muffin", calories: 10),
-            Item(name: "Cookie", calories: 10),
-            Item(name: "Coconut", calories: 500),
-            Item(name: "Chocolate frosting", calories: 1000),
-            Item(name: "Chocolate chip", calories: 1000)
-                ]
+Item(name: "Eggplant Brownie", calories: 10),
+Item(name: "Zucchini Muffin", calories: 10),
+Item(name: "Cookie", calories: 10),
+Item(name: "Coconut", calories: 500),
+Item(name: "Chocolate frosting", calories: 1000),
+Item(name: "Chocolate chip", calories: 1000)
+]
     var selected = Array<Item>()
 
+    func addItem(item: Item){
+        items.append(item)
+        if tableView == nil{
+            return
+        }
 
+        tableView!.reloadData()
+    }
+    override func viewDidLoad() {
+        let newItemButton = UIBarButtonItem(title: "new item",
+        style: UIBarButtonItemStyle.Plain,
+        target: self,
+        action: #selector(ViewController.showNewItem))
+        navigationItem.rightBarButtonItem = newItemButton
+    }
+
+
+    func showNewItem(){
+        let newItem = NewItemViewController(delegate: self)
+        if let navigation = navigationController{
+            navigation.pushViewController(newItem, animated: true)
+        }
+    }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let row = indexPath.row
-        
+
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
 
         let item = items[row]
@@ -46,7 +91,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         return cell
     }
-    
+
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
         let cell = tableView.cellForRowAtIndexPath(indexPath)
@@ -70,28 +115,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
 
     }
-    
-    
-    @IBAction
-    func add(){
-        if nameTxtField == nil || happinessTxtField == nil {
-            return
-        }
-        let name = nameTxtField!.text
-        let happiness = Int(happinessTxtField!.text)
-        let meal = Meal(name: name!, happiness: happiness!)
-//        meal.items = selected
-        print("eaten: \(meal.name) | \(meal.happiness) | \(meal.items.description)")
-        if delegate == nil {
-            return
-        }
-        
-        delegate!.add(meal)
-        if let navigation = self.navigationController {
-            navigation.popViewControllerAnimated(true)
 
-        }
-    }
+
 
 
 
