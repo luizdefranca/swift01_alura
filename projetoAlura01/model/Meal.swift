@@ -14,7 +14,7 @@ public class Meal{
     
     let happiness: Int
     
-    var items=Array<Item>()
+    var items = Array<Item>()
     
     
     
@@ -43,11 +43,13 @@ public class Meal{
     }
     
     func detail() -> String{
-        
-        var message = "Happiness: \(self.name) "
-        for item in self.items{
-            message += "\n * \(item.name) - \(item.calories) calories"
+        print(items.count)
+        var message = "Happiness: \(happiness) "
+        for i in items{
+            message += "\n * \(i.name) - \(i.calories) calories"
+            print(message)
         }
+        
         return message
     }
     

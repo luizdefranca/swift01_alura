@@ -18,6 +18,7 @@
 		C2B371A01D61340B00383E70 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B3719F1D61340B00383E70 /* Item.swift */; };
 		C2B371A21D61342500383E70 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B371A11D61342500383E70 /* Meal.swift */; };
 		C2BB88981D6D069A00C9F4A7 /* NewItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2BB88961D6D069A00C9F4A7 /* NewItemViewController.xib */; };
+		C2E067041D6F6EF300F2DCDB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E067031D6F6EF300F2DCDB /* Alert.swift */; };
 		C5B9777811748F554FE2FC06 /* NewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B97C9F8335FF13A8765D72 /* NewItemViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		C2B3719F1D61340B00383E70 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		C2B371A11D61342500383E70 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		C2BB88961D6D069A00C9F4A7 /* NewItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewItemViewController.xib; sourceTree = "<group>"; };
+		C2E067031D6F6EF300F2DCDB /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C5B97C9F8335FF13A8765D72 /* NewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 			children = (
 				C2973C5D1D5CFA57003677C4 /* Main.storyboard */,
 				C2BB88961D6D069A00C9F4A7 /* NewItemViewController.xib */,
+				C2E067031D6F6EF300F2DCDB /* Alert.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				C2B371A01D61340B00383E70 /* Item.swift in Sources */,
 				C2973C5A1D5CFA57003677C4 /* AppDelegate.swift in Sources */,
 				C5B9777811748F554FE2FC06 /* NewItemViewController.swift in Sources */,
+				C2E067041D6F6EF300F2DCDB /* Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

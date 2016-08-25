@@ -48,13 +48,15 @@ class MailTableTableViewController: UITableViewController, AddMealDelegate
         cell.textLabel!.text = meal.name
         
         //Create a LongPressGestureRecognizer to tableView
-        let logPress = UILongPressGestureRecognizer(target: self, action: Selector("showDetails:"))
+        let logPress = UILongPressGestureRecognizer(target: self, action: #selector(MailTableTableViewController.showDetails(_:)))
         cell.addGestureRecognizer(logPress)
         return cell
+        
+        
     }
     
     // Method to LongPressGestureRecognizer
-    func showDetail(recognizer: UILongPressGestureRecognizer){
+    func showDetails(recognizer: UILongPressGestureRecognizer){
         if recognizer.state == UIGestureRecognizerState.Began{
             let cell = recognizer.view as! UITableViewCell
             

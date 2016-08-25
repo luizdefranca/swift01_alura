@@ -37,39 +37,44 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet var tableView: UITableView?
     @IBAction func add(){
+        
+        if let meal = getMealFromForm(){
+            if let mealDelegate = delegate{
+                mealDelegate.add(meal)
+                if let navigation = self.navigationController{
+                    navigation.popViewControllerAnimated(true)
+                } else{
+                    Alert(controller: self).show("Unexpected error, but the meal was added.")
+                }
+                return
+            }
+        }
+        Alert(controller: self).show()
+        
+    }
+    
+    func getMealFromForm() -> Meal?{
         if nameTxtField == nil || happinessTxtField == nil {
-            return
+            return nil
         }
         let name = nameTxtField!.text
         let happiness = Int(happinessTxtField!.text)
         let meal = Meal(name: name!, happiness: happiness!)
-//        meal.items = selected
+        meal.items = selected
         print("eaten: \(meal.name) | \(meal.happiness) | \(meal.items.description)")
-        
-        if delegate == nil {
-            return
-        }
+        return meal
 
-        delegate!.add(meal)
-        if let navigation = self.navigationController {
-            navigation.popViewControllerAnimated(true)
-
-        }
     }
-
 
     func addItem(newItem item: Item){
         items.append(item)
         if let table = tableView{
             table.reloadData()
         }else{
-            let alert = UIAlertController(title: "Sorry!", message: "Unexpected error but the item was added.", preferredStyle: UIAlertControllerStyle.Alert)
-            let ok = UIAlertAction(title: "Understood", style: UIAlertActionStyle.Cancel, handler: nil)
-            alert.addAction(ok)
-            presentViewController(alert, animated: true, completion: nil)
+            Alert(controller: self).show("unexpected error")
         }
 
-        tableView!.reloadData()
+    
     }
     override func viewDidLoad() {
         let newItemButton = UIBarButtonItem(title: "new item",
@@ -84,6 +89,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let newItem = NewItemViewController(delegate: self)
         if let navigation = navigationController{
             navigation.pushViewController(newItem, animated: true)
+        }else{
+            Alert(controller: self).show()
         }
     }
 
@@ -105,31 +112,36 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        let row = indexPath.row
-        let item = items[row]
-        if cell == nil{
-            return
+        if let cell = tableView.cellForRowAtIndexPath(indexPath){
+            let item = items[indexPath.row]
+            if cell.accessoryType == UITableViewCellAccessoryType.None{
+                cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+                selected.append(item)
+                
+            } else {
+                cell.accessoryType = UITableViewCellAccessoryType.None
+                //            let position = find(selected, item)
+                //            selected.removeAtIndex(position!)
+                if let position = selected.indexOf(item){
+                selected.removeAtIndex(position)
+                } else{
+                    Alert(controller: self).show()
+                }
+            }
+        }else{
+            Alert(controller: self).show()
         }
-        if cell!.accessoryType == UITableViewCellAccessoryType.None {
-            cell!.accessoryType = UITableViewCellAccessoryType.Checkmark
-            selected.append(item)
-
-        } else {
-            cell!.accessoryType = UITableViewCellAccessoryType.None
-//            let position = find(selected, item)
-//            selected.removeAtIndex(position!)
-            let position = selected.indexOf(item)
-            selected.removeAtIndex(position!)
-        }
-
-
-
+       
+        
+        
+            
     }
-
-
-
-
-
+    
 }
+
+
+
+
+
+
 
