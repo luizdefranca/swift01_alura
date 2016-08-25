@@ -9,7 +9,7 @@
 import UIKit
 
 protocol AddAnItemDelegate{
-    func addItem(item: Item)
+    func addItem(newItem item: Item)
 }
 class NewItemViewController: UIViewController {
    
@@ -17,6 +17,7 @@ class NewItemViewController: UIViewController {
     @IBOutlet var caloriesField: UITextField?
     var delegate: AddAnItemDelegate?
 
+    // New Builder with a delegate as parameter
     init(delegate: AddAnItemDelegate){
         
         self.delegate = delegate
@@ -40,9 +41,9 @@ class NewItemViewController: UIViewController {
         if let navigation = navigationController {
             navigation.popViewControllerAnimated(true)
         }
-
+        // Pass by delegate to ViewController
         if let deleg = delegate {
-            deleg.addItem(item)
+            deleg.addItem(newItem: item)
         }
 
 

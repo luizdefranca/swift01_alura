@@ -44,7 +44,38 @@ class MailTableTableViewController: UITableViewController, AddMealDelegate
 //        if cell.textLabel == cell.textLabel{
 //            cell.textLabel!.text = meal.name
 //        }
+       
         cell.textLabel!.text = meal.name
+        
+        //Create a LongPressGestureRecognizer to tableView
+        let logPress = UILongPressGestureRecognizer(target: self, action: Selector("showDetails:"))
+        cell.addGestureRecognizer(logPress)
         return cell
+    }
+    
+    // Method to LongPressGestureRecognizer
+    func showDetail(recognizer: UILongPressGestureRecognizer){
+        if recognizer.state == UIGestureRecognizerState.Began{
+            let cell = recognizer.view as! UITableViewCell
+            
+            let indexPath = tableView.indexPathForCell(cell)
+            if indexPath == nil {
+                return
+            }
+            let row = indexPath!.row
+            let meal = meals[row]
+            
+            let details = UIAlertController(title: meal.name, message: meal.detail(), preferredStyle: UIAlertControllerStyle.Alert)
+            
+            
+            let ok = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+            details.addAction(ok)
+            presentViewController(details, animated: true, completion: nil)
+            
+            
+            
+            print("Meal: \(meal.name) - Happiness: \(meal.happiness) - Calories: \(meal.allCalories())")
+        }
+        
     }
 }

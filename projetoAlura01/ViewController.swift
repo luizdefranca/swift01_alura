@@ -17,11 +17,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet var nameTxtField: UITextField?
 
     @IBOutlet var happinessTxtField: UITextView?
-//    var delegate: MailTableTableViewControlle
+    //    var delegate: MailTableTableViewControlle
+    //  Create a delegate
+    var delegate: AddMealDelegate?
+   
+    
+    var items = [
+        Item(name: "Eggplant Brownie", calories: 10),
+        Item(name: "Zucchini Muffin", calories: 10),
+        Item(name: "Cookie", calories: 10),
+        Item(name: "Coconut", calories: 500),
+        Item(name: "Chocolate frosting", calories: 1000),
+        Item(name: "Chocolate chip", calories: 1000),
+        Item(name: "Coconut", calories: 500),
+        Item(name: "Chocolate frosting", calories: 1000),
+        Item(name: "Chocolate chip", calories: 1000)
+    ]
+    var selected = Array<Item>()
 
     @IBOutlet var tableView: UITableView?
-    @IBAction
-    func add(){
+    @IBAction func add(){
         if nameTxtField == nil || happinessTxtField == nil {
             return
         }
@@ -30,6 +45,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let meal = Meal(name: name!, happiness: happiness!)
 //        meal.items = selected
         print("eaten: \(meal.name) | \(meal.happiness) | \(meal.items.description)")
+        
         if delegate == nil {
             return
         }
@@ -41,18 +57,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    var delegate: AddMealDelegate?
-    var items = [
-Item(name: "Eggplant Brownie", calories: 10),
-Item(name: "Zucchini Muffin", calories: 10),
-Item(name: "Cookie", calories: 10),
-Item(name: "Coconut", calories: 500),
-Item(name: "Chocolate frosting", calories: 1000),
-Item(name: "Chocolate chip", calories: 1000)
-]
-    var selected = Array<Item>()
 
-    func addItem(item: Item){
+    func addItem(newItem item: Item){
         items.append(item)
         if tableView == nil{
             return
